@@ -7,8 +7,11 @@ const Menu =()=>{
     return(
         <>
         <StyledMenuContainer>
+        <StyledMenuCross onClick={()=>{
+            setOpen(!open)
+        }}>X</StyledMenuCross>
         <nav>
-            <StyledMenu>
+            <StyledMenu state={open}>
                 <StyledMenuItem>ITEM</StyledMenuItem>
                 <StyledMenuItem>ITEM</StyledMenuItem>
                 <StyledMenuItem>ITEM</StyledMenuItem>
@@ -16,9 +19,7 @@ const Menu =()=>{
             </StyledMenu>
         </nav>
   
-        <StyledMenuCross onClick={()=>{
-            setOpen(!open)
-        }}>X</StyledMenuCross>
+       
         </StyledMenuContainer>
         </>
     )

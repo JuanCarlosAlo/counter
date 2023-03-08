@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledMenuContainer = styled.div`
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -10,9 +11,22 @@ const StyledMenuContainer = styled.div`
 	}
 `;
 const StyledMenu = styled.ul`
-	display: none;
+	position: absolute;
+	width: 86vw;
+	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	padding: 2rem;
+	background-color: rgb(0, 191, 255);
+	opacity: ${({ state }) => {
+		console.log(state);
+		if (state === false) {
+			return 0;
+		} else {
+			return 1;
+		}
+	}};
+	transition: opacity 0.6s ease-in-out;
 	@media screen and (min-width: 768px) {
 		flex-direction: row;
 	}
@@ -27,7 +41,7 @@ const StyledMenuItem = styled.li`
 	justify-content: center;
 	align-items: center;
 	height: 40px;
-	background-color: pink;
+	background-color: white;
 	border-radius: 1rem;
 	@media screen and (min-width: 768px) {
 		width: 150px;
